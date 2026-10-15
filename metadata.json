@@ -1,0 +1,6 @@
+{
+  "name": "آوانویس - استخراج متن از ویدیو",
+  "description": "برنامه هوشمند استخراج متن و زیرنویس از صدای فیلم و فایل‌های ویدیویی و صوتی با هوش مصنوعی و امکان ویرایش و ذخیره در قالب فایلهای متنی",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
