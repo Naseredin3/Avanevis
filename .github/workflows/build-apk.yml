@@ -22,12 +22,14 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
-      - name: Set up Android SDK & Accept Licenses
-        uses: android-actions/setup-android@v3
-
       - name: Prepare Signing & Environment
         run: |
           chmod +x gradlew || true
+
+          # Accept Android SDK licenses if needed
+          if [ -d "$ANDROID_HOME/cmdline-tools/latest/bin" ]; then
+            yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses 2>/dev/null || true
+          fi
 
           # Restore debug.keystore from base64 if available, otherwise generate new debug keystore
           if [ -f debug.keystore.base64 ]; then
